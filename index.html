@@ -4,82 +4,40 @@
 <meta charset="UTF-8">
 <title>Мой Красочный Словарь</title>
 <style>
-  body {
-    background-color: #0B3D0B; /* тёмно-зелёный фон */
-    color: #E0F8E0;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-color: #145214;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-  }
-  header img {
-    max-width: 100%;
-    height: auto;
-    border-bottom: 2px solid #E0F8E0;
-  }
-  h1 {
-    margin: 10px 0;
-    font-size: 2em;
-    color: #C0FFC0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-  }
-  .word-item {
-    background-color: #1B5E1B;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  }
-  .word-item:hover {
-    transform: scale(1.05);
-    background-color: #2A7B2A;
-  }
-  .meaning, .transcription, .antonyms {
-    display: block;
-    margin-top: 5px;
-  }
-  button {
-    display: block;
-    margin: 20px auto;
-    background-color: #2A7B2A;
-    color: #E0F8E0;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  button:hover {
-    background-color: #3BA63B;
-  }
+body { background-color: #0b3d0b; color: #fff; font-family: Arial, sans-serif; text-align: center; }
+header { padding: 20px; }
+h1 { color: #a8ffb0; text-shadow: 2px 2px #014d01; }
+#word-list { list-style: none; padding: 0; max-width: 600px; margin: 20px auto; }
+.word-item { background: #145214; margin: 10px 0; padding: 10px; border-radius: 10px; cursor: pointer; transition: transform 0.3s, background 0.3s; }
+.word-item:hover { transform: scale(1.05); background: #1e8f1e; }
+.antonyms { color: #ffcccb; margin-top: 5px; }
+button { padding: 10px 20px; font-size: 16px; margin: 20px; border-radius: 10px; cursor: pointer; background: #1e8f1e; color: #fff; border: none; transition: background 0.3s; }
+button:hover { background: #2bb02b; }
 </style>
 </head>
 <body>
 
 <header>
-  <!-- Вставь сюда свою картинку шапки -->
-  <img src="header.jpg" alt="Шапка приложения">
+  <img src="YOUR_HEADER_IMAGE_URL_HERE" alt="Banner" style="max-width:100%; border-radius:10px;">
   <h1>Мой Красочный Словарь</h1>
 </header>
 
 <ul id="word-list"></ul>
-<button id="next-btn">Next 5 words</button>
+<button id="next-btn">Next 5 Words</button>
 
 <script>
 const words = [
-  { word: "Alive", transcription: "[əˈlaɪv]", meaning: "Живой", antonyms: ["Dead", "Unconscious"] },
+  { word: "Ebb", transcription: "[eb]", meaning: "Убывать", antonyms: ["Flow"] },
+  { word: "Fortunate", transcription: "[ˈfɔːrtʃənət]", meaning: "Счастливый", antonyms: ["Unfortunate"] },
+  { word: "Decrease", transcription: "[dɪˈkriːs]", meaning: "Уменьшение", antonyms: ["Increase"] },
+  { word: "Dark", transcription: "[dɑːrk]", meaning: "Тёмный", antonyms: ["Light"] },
+  { word: "Expand", transcription: "[ɪkˈspænd]", meaning: "Расширять", antonyms: ["Shrink"] },
+  { word: "Entrance", transcription: "[ˈɛntrəns]", meaning: "Вход", antonyms: ["Exit"] },
+  { word: "Despair", transcription: "[dɪˈsper]", meaning: "Отчаяние", antonyms: ["Hope"] },
+  { word: "Expensive", transcription: "[ɪkˈspensɪv]", meaning: "Дорогой", antonyms: ["Cheap"] },
+  { word: "Fail", transcription: "[feɪl]", meaning: "Потерпеть неудачу", antonyms: ["Succeed"] },
+  { word: "Generous", transcription: "[ˈdʒenərəs]", meaning: "Щедрый", antonyms: ["Stingy"] },
+ { word: "Alive", transcription: "[əˈlaɪv]", meaning: "Живой", antonyms: ["Dead", "Unconscious"] },
   { word: "Advance", transcription: "[ədˈvæns]", meaning: "Продвигаться", antonyms: ["Retreat", "Behind"] },
   { word: "Admit", transcription: "[ədˈmɪt]", meaning: "Признавать", antonyms: ["Deny", "Expel"] },
   { word: "Agree", transcription: "[əˈɡriː]", meaning: "Соглашаться", antonyms: ["Disagree", "Reject"] },
@@ -87,9 +45,9 @@ const words = [
   { word: "Abundant", transcription: "[əˈbʌndənt]", meaning: "Изобильный, обильный", antonyms: ["Scarce"] },
   { word: "Accurate", transcription: "[ˈækjərət]", meaning: "Точный", antonyms: ["Inaccurate"] },
   { word: "Advantage", transcription: "[ədˈvæntɪdʒ]", meaning: "Преимущество", antonyms: ["Disadvantage"] },
-  { word: "Artificial", transcription: "[ˌɑːrtɪˈfɪʃl]", meaning: "Искусственный", antonyms: ["Natural"] },
+  { word: "Artificial", transcription: "[ˌɑːrtɪˈfɪʃəl]", meaning: "Искусственный", antonyms: ["Natural"] },
   { word: "Attack", transcription: "[əˈtæk]", meaning: "Атака", antonyms: ["Defense"] },
-{ word: "Accept", transcription: "[əkˈsept]", meaning: "Принимать", antonyms: ["Reject"] },
+  { word: "Accept", transcription: "[əkˈsept]", meaning: "Принимать", antonyms: ["Reject"] },
   { word: "Ascend", transcription: "[əˈsend]", meaning: "Подниматься", antonyms: ["Descend"] },
   { word: "Attention", transcription: "[əˈtenʃən]", meaning: "Внимание", antonyms: ["Neglect"] },
   { word: "Approach", transcription: "[əˈproʊtʃ]", meaning: "Подходить", antonyms: ["Retreat"] },
@@ -126,7 +84,7 @@ const words = [
   { word: "Demand", transcription: "[dɪˈmænd]", meaning: "Требовать", antonyms: ["Supply"] },
   { word: "Famous", transcription: "[ˈfeɪməs]", meaning: "Известный", antonyms: ["Unknown"] },
   { word: "First", transcription: "[fɜːrst]", meaning: "Первый", antonyms: ["Last"] },
-  { word: "Friend", transcription: "[frend]", meaning: "Друг", antonyms: ["Enemy"] }
+  { word: "Friend", transcription: "[frend]", meaning: "Друг", antonyms: ["Enemy"] },
   { word: "Ebb", transcription: "[eb]", meaning: "Убывать", antonyms: ["Flow"] },
   { word: "Fortunate", transcription: "[ˈfɔːrtʃənət]", meaning: "Счастливый", antonyms: ["Unfortunate"] },
   { word: "Decrease", transcription: "[dɪˈkriːs]", meaning: "Уменьшение", antonyms: ["Increase"] },
@@ -195,35 +153,35 @@ const words = [
 ];
 
 let index = 0;
+const wordList = document.getElementById('word-list');
+const nextBtn = document.getElementById('next-btn');
 
-function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
-function displayWords() {
-  const wordList = document.getElementById('word-list');
+function displayNextWords() {
   wordList.innerHTML = '';
-  const slice = words.slice(index, index + 5);
-  slice.forEach(w => {
+  const nextWords = words.slice(index, index + 5);
+  nextWords.forEach(w => {
     const li = document.createElement('li');
     li.className = 'word-item';
-    li.innerHTML = `<strong>${w.word}</strong> <span class="transcription">${w.transcription}</span> — <span class="meaning">${w.meaning}</span>`;
+    li.innerHTML = `<strong>${w.word}</strong> [${w.transcription}] — <span>${w.meaning}</span>`;
     li.addEventListener('click', () => {
-      li.innerHTML = `<strong>${w.word}</strong> <span class="transcription">${w.transcription}</span> — <span class="meaning">${w.meaning}</span><div class="antonyms">Антонимы: ${w.antonyms.join(', ')}</div>`;
+      li.innerHTML = `<strong>${w.word}</strong> [${w.transcription}] — <span>${w.meaning}</span><div class="antonyms">Антонимы: ${w.antonyms.join(', ')}</div>`;
     });
     wordList.appendChild(li);
   });
+  index += 5;
+  if (index >= words.length) index = 0;
 }
 
-document.getElementById('next-btn').addEventListener('click', () => {
-  index += 5;
-  if(index >= words.length) index = 0;
-  displayWords();
-});
-
-// Перемешиваем и отображаем первые 5 слов
-shuffleArray(words);
-displayWords();
+shuffle(words);
+displayNextWords();
+nextBtn.addEventListener('click', displayNextWords);
 </script>
 
 </body>
